@@ -1,8 +1,11 @@
 import React from "react";
+import ServerAPI from "./ServerAPI";
+
 //construct API
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
+        this.api = new ServerAPI("http://localhost:2222")
         this.state = {
         };
         this.handleChange = this.handleChange.bind(this);
@@ -22,6 +25,18 @@ class LoginForm extends React.Component {
     handleSubmit(event) {
         // Stop the form from submiting
         event.preventDefault();
+        const params = {
+            url: "/logins",
+            success: response => console.log(response),
+            failure: response => console.log(response),
+            data: {
+                email: this.state.email,
+                password: this.state.password
+            }
+        }
+        debugger
+        this.api.postJson(params)
+
         // get the message from the form
         alert(this.state.email);
         alert(this.state.password);
@@ -32,13 +47,13 @@ class LoginForm extends React.Component {
         return(
             <form className="email" onSubmit={this.handleSubmit}>
                 <label>
-                <input 
+                <input type="email" 
                 name="email"
                 value={this.state.email} onChange={this.handleChange}
                 required placeholder="Login Email" /> 
               </label> <br />
               <label>
-                <textarea 
+                <input type="password"  
                 name="password"
                 value={this.state.password} onChange={this.handleChange}
                 required placeholder="Your Password" />

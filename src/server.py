@@ -2,6 +2,7 @@ from flask import (Flask, render_template, redirect, request, flash, session, js
 from model import User, Message, connect_to_db, db
 from jinja2 import StrictUndefined
 from flask_debugtoolbar import DebugToolbarExtension
+import hashlib
 
 """My Project App"""
 
@@ -44,23 +45,41 @@ def display_user_profile(user_id):
 
     return render_template("user_profile.html", user=user, user_ratings=user_ratings)
 
+@app.route('/logins', methods=['POST'])
+def logins():
+    """//need to parse request.body ie parse json to a hash"""
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    user = User.query.filter_by(userEmail=email).one()
+    hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
+
+    if not user or user.digest != hash:
+        return render_json([success: False, message: "User/Password does not exist"])
+
+    //call json stringify
+    return render_json([success: True, message: "Login Successful!"])
+
+
 @app.route('/register', methods=["GET", 'POST'])
 def register_form():
 
     if request.method == 'POST':
-        userEmail = request.form.get("userEmail")
+        email = request.form.get("userEmail")
         password = request.form.get("password")
 
         #check if in db, else add to db
-        if User.query.filter_by(userEmail=userEmail).all():
+        if User.query.filter_by(userEmail=userEmail).one():
             flash("User already exists")
 
         else:
-            new_user = User(userEmail=userEmail, password=password)
+            hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
+            new_user = User(userEmail=userEmail, digest=hash)
 
             db.session.add(new_user)
             db.session.commit()
-            new_user = User.query.filter_by(email=Email).one()
+            new_user = User.query.filter_by(email=email).one()
 
             flash("You have successfully signed up!")
             session['login'] = True

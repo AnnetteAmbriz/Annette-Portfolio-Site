@@ -17,10 +17,11 @@ class User(db.Model):
 
     __tablename__ = "users"
 
-    userId = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     fname = db.Column(db.String(64), nullable=False)
-    userEmail = db.Column(db.String(64), nullable=False)
-    password = db.Column(db.String(64), nullable=False)
+    email = db.Column(db.String(64), nullable=False)
+    digest = db.Column(db.String(64), nullable=False))
+    
 
     def __repr__(self):
         """Returns relevant info about user object"""
@@ -33,7 +34,7 @@ class Message(db.Model):
 
     __tablename__ = "messages"
 
-    messageID = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey('users.userId'), nullable=False)
     subject = db.Column(db.String(140), nullable=False)
     message = db.Column(db.String(400), nullable=False)
