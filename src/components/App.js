@@ -11,7 +11,7 @@ class App extends React.Component {
                 <div className="splashpage">
                     <Header tagline="Annette is cool"/>
                 </div>
-                {/*<MyText />*/}
+                <Header />
                 <LoginForm />
                 {/*<ContactForm />*/}
                 {/*<Banner />*/}
