@@ -60,7 +60,7 @@ def register_form():
 
             db.session.add(new_user)
             db.session.commit()
-            new_user = User.query.filter_by(email=email).one()
+            new_user = User.query.filter_by(email=Email).one()
 
             flash("You have successfully signed up!")
             session['login'] = True
