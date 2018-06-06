@@ -59,7 +59,7 @@ class ContactForm extends React.Component{
                                                                 </form>
                                                             </div>
                                                         </div>
-                                                        <p></p>
+                                                    <p></p>
                                                     </div>
                                                 </div>
                                             </div>

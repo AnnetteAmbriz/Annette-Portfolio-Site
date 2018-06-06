@@ -25,8 +25,10 @@ class Header extends React.Component {
                                                 
                                             <li><a href="about-us.html">about</a></li>
                                             <li><a href="contact.html">Contact</a></li>
+                                            <li></li>
+                                            <li></li>
                                         </ul>
-                                        <div class="col-md-3  col-sm-2 col-xs-6"></div>
+                                        
                                 </nav>
                             </div>
                             </div>

@@ -23,26 +23,26 @@ class LoginForm extends React.Component {
         // Stop the form from submiting
         event.preventDefault();
         // get the message from the form
-        alert(this.state.subject);
-        alert(this.state.message);
+        alert(this.state.email);
+        alert(this.state.password);
         
     }
     
     render() {
         return(
-            <form className="contactForm" onSubmit={this.handleSubmit}>
+            <form className="email" onSubmit={this.handleSubmit}>
                 <label>
                 <input 
-                name="subject"
-                value={this.state.subject} onChange={this.handleChange}
-                required placeholder="Your Subject" /> 
+                name="email"
+                value={this.state.email} onChange={this.handleChange}
+                required placeholder="Login Email" /> 
               </label> <br />
               <label>
                 <textarea 
-                name="message"
-                value={this.state.message} onChange={this.handleChange}
-                required placeholder="Your Message" />
-                <button type="submit" className="btn-submit button">Send Message</button>
+                name="password"
+                value={this.state.password} onChange={this.handleChange}
+                required placeholder="Your Password" />
+                <button type="submit" className="btn-submit button">Login In</button>
                 </label>
                 </form>    
         )
