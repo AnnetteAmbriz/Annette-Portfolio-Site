@@ -2,12 +2,14 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'; 
 import App from "./App";
 import ContactForm from "./ContactForm";
+import AboutMe from "./AboutMe";
 
 const Router = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={App} />
-            <Route path="/contactform" compenent={ContactForm} />
+            <Route path="/contactform" component={ContactForm} />
+            <Route path="/aboutme" component={AboutMe} />
         </Switch>
     </BrowserRouter>
 );

@@ -21,12 +21,11 @@ class User(db.Model):
     fname = db.Column(db.String(64), nullable=False)
     email = db.Column(db.String(64), nullable=False)
     digest = db.Column(db.String(64), nullable=False))
-    
 
     def __repr__(self):
         """Returns relevant info about user object"""
 
-        return "<frame: {} userEmail: {} userID: {}>".format(self.frame, self.userEmail, self.userId)
+        return "<frame: {} userEmail: {} userID: {}>".format(self.frame, self.email, self.id)
 
 
 class Message(db.Model):

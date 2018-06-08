@@ -12,7 +12,7 @@ class App extends React.Component {
                     <Header tagline="Annette is cool"/>
                 </div>
                 <Header />
-                <LoginForm />
+                {/*<LoginForm />*/}
                  {/*<ContactForm />*/}
                 {/*<Banner />*/}
             </div>

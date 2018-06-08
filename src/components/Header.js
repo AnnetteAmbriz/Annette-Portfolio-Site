@@ -1,12 +1,33 @@
 import React, { Fragment } from "react";
 
 class Header extends React.Component {
+    goToContactForm = event => {
+        this.props.history.push(`/contactform`);
+    };
     render() {
         return(
             <Fragment>
-            <div class="wrapper">
+            <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+                
+                <meta name="description" content=""></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+                <link rel="apple-touch-icon" href="apple-touch-icon.png"></link>    
+
+                
+
+                <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+                <link rel="stylesheet" href="css/themify-icons.css"></link>
+                <link rel="stylesheet" href="css/elements.css"></link>
+                <link rel="stylesheet" href="style.css"></link>
+                <link rel="stylesheet" href="css/responsive.css"></link>
+
+                <link rel="stylesheet" href="css/custom.css"></link>
+                <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+            
+
+            <body>
             <header class="header-area header-style-one intelligent-header">
-                <div class="header-middle-area">
+                
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3  col-sm-2 col-xs-6">
@@ -21,23 +42,23 @@ class Header extends React.Component {
                                             <li><a href="/">Home</a></li>
                                             <li><a href="/">Portfolio</a> </li>
                                                 
-                                                <li><a href="index.html">Projects </a></li>
+                                                <li><a href="index.html">Projects</a></li>
                                                 
-                                            <li><a href="about-us.html">about</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="/aboutme">About Me</a></li>
+                                            <li><a href="/contactform">Contact Me</a></li>
                                             <li></li>
                                             <li></li>
                                         </ul>
-                                        
                                 </nav>
                             </div>
                             </div>
                         </div>
-                    </div>
+                    
                 </div>
                 </header>
-                </div>
+                
             <div class="intelligent-header-space"></div>
+            </body>
         </Fragment>
         )
     }

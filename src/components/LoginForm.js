@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ServerAPI from "./ServerAPI";
 
 //construct API
@@ -45,6 +45,21 @@ class LoginForm extends React.Component {
     
     render() {
         return(
+            <Fragment>
+            <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+                
+                <meta name="description" content=""></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+                <link rel="apple-touch-icon" href="apple-touch-icon.png"></link>    
+                <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+                <link rel="stylesheet" href="css/themify-icons.css"></link>
+                <link rel="stylesheet" href="css/elements.css"></link>
+                <link rel="stylesheet" href="style.css"></link>
+                <link rel="stylesheet" href="css/responsive.css"></link>
+                <link rel="stylesheet" href="css/custom.css"></link>
+                <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+            <body>
             <form className="email" onSubmit={this.handleSubmit}>
                 <label>
                 <input type="email" 
@@ -59,7 +74,9 @@ class LoginForm extends React.Component {
                 required placeholder="Your Password" />
                 <button type="submit" className="btn-submit button">Login In</button>
                 </label>
-                </form>    
+                </form>
+                </body>
+                </Fragment>    
         )
     }
 }
