@@ -56,6 +56,7 @@ class ContactForm extends React.Component{
         return (
             <Fragment>
                 { /* comments in JSX! */ }
+                <body>
                 <div className="content">
                         <div className="breadcrumb-style-two gray-bg">
                             <div className="container">
@@ -119,12 +120,24 @@ class ContactForm extends React.Component{
                                                 </div>
                                             </div>
                                         </div>
+                                       
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <script src="js/vendor/jquery-1.12.4.min.js"></script>
+                <script src="js/vendor/bootstrap.min.js"></script>
+                <script src="js/plugins.js"></script>
+                <script src="js/jquery.isotope.js"></script>
+            
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8hjTJwTaYk3q7ccXZ9SNl5F9Ey6UPEhg"></script>
+                <script src="js/erika.google.map.js"></script>
+                <script src="js/ajax-mail.js"></script>
+                <script src="js/main.js"></script>
+                </body>
             </Fragment>
         )
     }

@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from "./App";
 import ContactForm from "./ContactForm";
 import AboutMe from "./AboutMe";
+import Home from "./Home";
 
 const Router = () => (
     <BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-class MyText extends React.Component {
+class Home extends React.Component {
     render() {
         return (
             <Fragment>
@@ -19,9 +19,31 @@ class MyText extends React.Component {
                 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
             
             <body> 
-                <div>
-                { /* Placeholder! */ }
-                </div>
+                   <div>
+                   <div class="intelligent-header-space"></div>
+                    <div class="slider-area static-dotted-bg" id="particle-ground">
+                    
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="banner-static-content text-center">
+                                        <h1 class="cd-headline clip is-full-width">
+                                                <span>I am</span> <br></br>
+                                                <span class="cd-words-wrapper">
+                                                    <b class="is-visible">Annette</b><br></br>
+                                                    <b class="is-visible">Ambriz</b>
+
+                                                    
+                                                </span>
+                                            </h1>
+                                        <p>Placeholder to say something.</p>
+                                        <a href="/contactform" class="button active-btn">Contact Me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                     
                     <footer className="footer-area text-left">
                         <div className="container">
@@ -60,7 +82,7 @@ class MyText extends React.Component {
                             </div>
                         </div>
                     </footer>
-                    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+                   
     
                 </body>
                 </Fragment>  
@@ -68,4 +90,4 @@ class MyText extends React.Component {
     }
 }
 
-export default MyText;
+export default Home;

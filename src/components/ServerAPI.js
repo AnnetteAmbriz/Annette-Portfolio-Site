@@ -16,8 +16,9 @@ export default class ServerAPI {
 
 	postJson = params => {
 		let headers = this.getHeaders('Content-Type')
-		if (this.logging) {console.log('Post', params.url, params.data)}
+		if (this.logging) {console.log('Post', params.url, params.data, params.headers)}
 		let body = JSON.stringify(params.data)
+		// content type will be x-application-form (email=x&password=y, application/json
 		let request = new Request(this.url(params), {method: 'POST', headers: headers, body: body})
 		this.fetchRequest(request, params)
 	}
@@ -51,6 +52,8 @@ export default class ServerAPI {
 				params.failure(json.message)
 			}
 
-            })
-        }
+			})
+		.catch(err => console.log('fetch request error', err))
+		}
+		
     }

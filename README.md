@@ -1,6 +1,6 @@
 # annetteambriz_hackbright_project
 
-WIP: 
-pip install requirements.txt
-npm install
-npm start      
+Steps to run: 
+1.)pip install requirements.txt
+2.) npm install
+3.) npm start      

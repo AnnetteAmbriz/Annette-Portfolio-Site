@@ -47,7 +47,7 @@ def display_user_profile(user_id):
 
 @app.route('/logins', methods=['POST'])
 def logins():
-    """//need to parse request.body ie parse json to a hash"""
+    """need to parse request.body ie parse json to a hash"""
 
     email = request.form.get("email")
     password = request.form.get("password")
@@ -58,34 +58,37 @@ def logins():
     if not user or user.digest != hash:
         return render_json([success: False, message: "User/Password does not exist"])
 
-    //call json stringify
+    """call json stringify"""
     return render_json([success: True, message: "Login Successful!"])
 
 
-@app.route('/register', methods=["GET", 'POST'])
+@app.route('/register', methods=['POST'])
+def register_form_post():
+    email = request.form.get("userEmail")
+    password = request.form.get("password")
+
+    #check if in db, else add to db
+    if User.query.filter_by(userEmail=userEmail).one():
+        flash("User already exists")
+
+    else:
+        hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
+        new_user = User(userEmail=userEmail, digest=hash)
+
+        db.session.add(new_user)
+        db.session.commit()
+        new_user = User.query.filter_by(email=email).one()
+
+        flash("You have successfully signed up!")
+        session['login'] = True
+        session['user_id'] = new_user.user_id
+        return render_json([success: True, message: "Register Successful!"])
+        # return redirect('/users/{}'.format(session['user_id']))
+    return render_json([success: False, message: "Register Successful!"])
+    # return render_template("register_form.html")
+
+@app.route('/register', methods=['GET'])
 def register_form():
-
-    if request.method == 'POST':
-        email = request.form.get("userEmail")
-        password = request.form.get("password")
-
-        #check if in db, else add to db
-        if User.query.filter_by(userEmail=userEmail).one():
-            flash("User already exists")
-
-        else:
-            hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
-            new_user = User(userEmail=userEmail, digest=hash)
-
-            db.session.add(new_user)
-            db.session.commit()
-            new_user = User.query.filter_by(email=email).one()
-
-            flash("You have successfully signed up!")
-            session['login'] = True
-            session['user_id'] = new_user.user_id
-            return redirect('/users/{}'.format(session['user_id']))
-
     return render_template("register_form.html")
 
 
