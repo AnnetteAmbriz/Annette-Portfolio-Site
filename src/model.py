@@ -20,7 +20,7 @@ class User(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     fname = db.Column(db.String(64), nullable=False)
     email = db.Column(db.String(64), nullable=False)
-    digest = db.Column(db.String(64), nullable=False))
+    digest = db.Column(db.String(64), nullable=False)
 
     def __repr__(self):
         """Returns relevant info about user object"""
@@ -41,8 +41,7 @@ class Message(db.Model):
 
     #Define relationship to user
     user = db.relationship("User",
-                       backref=db.backref("messages",
-                                          order_by=messageID))
+                       backref=db.backref("messages"))
 
     def __repr__(self):
         """Returns relevant info about Message object"""

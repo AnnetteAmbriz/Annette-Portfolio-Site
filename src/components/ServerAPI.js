@@ -41,19 +41,24 @@ export default class ServerAPI {
 		})
 	}
 
-	fetchRequest = (request, params) => {
-        fetch(request)
-        .then(response => response.json())
-        .then(json => {
-			if (this.logging) {console.log('Response', json)}
-			if (json.success) {
-				params.success(json)
-			} else {
-				params.failure(json.message)
-			}
-
-			})
-		.catch(err => console.log('fetch request error', err))
-		}
+	//fetchRequest = (request, params) => {
 		
-    }
+		
+		
+		
+        // fetch(request)
+        // .then(response => response.json())
+        // .then(json => {
+		// 	if (this.logging) {console.log('Response', json)}
+		// 	if (json.success) {
+		// 		params.success(json)
+		// 	} else {
+		// 		params.failure(json.message)
+		// 	}
+
+		// 	})
+		// .catch(err => console.log('fetch request error', err))
+		// }
+		
+	//}
+}

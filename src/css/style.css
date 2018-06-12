@@ -59,9 +59,10 @@ CSS Index:
 /*-------------------------------------------------------
 1. Theme default css
 ---------------------------------------------------------*/
-@import 'https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700|Open+Sans:300,400,400i,600,700';
+@import 'https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700|Open+Sans:300,400,400i,600,700|Montserrat|Rubik:96,400';
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rubik', light;
   font-weight: normal;
   font-style: normal;
 }
@@ -106,13 +107,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Rubik', light;
   font-weight: normal;
   color: #232332;
   margin-top: 0px;
   font-style: normal;
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 h1 a,
@@ -148,7 +149,7 @@ ul {
 }
 li { list-style: none }
 p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 24px;
   color: #7e7e7e;
@@ -163,7 +164,7 @@ hr{
 label {
   color: #7e7e7e;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
 }
 *::-moz-selection {
@@ -195,7 +196,7 @@ label {
   1.1 Background color variation for section
 ---------------------------------------------------------*/
 .white-bg { 
-	background: #ffffff; 
+	background: #FFFFFF; 
 }
 .gray-bg { 
 	background: #f6f6f6;
@@ -1245,18 +1246,33 @@ transition-duration: 0.6s;
   9.1 Breadcrumb Style Two
 ---------------------------------*/
 .breadcrumb-style-two {
+  font-family: 'Rubik';
   padding: 70px 0;
-}
+  color: #232332;
+  
+  text-transform: uppercase;
+  position: relative;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  }
+  .breadcrumb-style-two li:hover > a {
+    color: #d6b161;
+  }
+
 .breadcrumb-style-two .breadcrumb-content .page-cat {
+  
   display: inline-block;
   float: left;
   font-size: 22px;
   margin: 0;
 }
 .breadcrumb-style-two .breadcrumb-content {
+  
   overflow: hidden;
 }
 .breadcrumb-style-two .breadcrumb-list {
+  
   display: inline-block;
   float: right;
 }
@@ -2566,7 +2582,7 @@ pre {
 }
 .panel-title a::before {
   content: "";
-  font-family: fontawesome;
+  font-family: Rubik;
   position: absolute;
   right: 0;
   top: -1px;
