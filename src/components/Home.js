@@ -20,6 +20,7 @@ class Home extends React.Component {
         <body>
           <div>
             <div class="intelligent-header-space" />
+            
 
             <div class="slider-area static-dotted-bg" id="particle-ground">
               <div class="container">
@@ -27,15 +28,18 @@ class Home extends React.Component {
                   <div class="col-md-12">
                     <div class="banner-static-content text-center">
                       <h1 class="cd-headline clip is-full-width">
-                        <span>I am</span> <br />
-                        <span class="cd-words-wrapper">
-                          <b class="is-visible">Annette</b>
+                        <span style={{ textAlign: "center"}}>I am</span> <br />
+                        <span style={{ textAlign: "center"}} class="cd-words-wrapper">
+                          <b style={{ textAlign: "center"}} class="is-visible">Annette</b>
                           <br />
-                          <b class="is-visible">Ambriz</b>
+                          <b style={{ textAlign: "center"}} class="is-visible">Ambriz</b>
                         </span>
-                      </h1>
-                      <p>Placeholder to say something.</p>
-                      <a href="/contactform" class="button active-btn">
+                      </h1> 
+                      <div class="single-project-description"> <br></br> <br></br>
+                                <h2 style={{ textAlign: "center"}} class="single-project-title">“Everybody should learn to program, because it teaches you how to think.”</h2>
+                      {/* {/* <p style={{ textAlign: "center"}} >“Everybody in this country should learn to program a computer, because it teaches you how to think”</p>  */}
+                      </div> 
+                      <a href="/contactform" style={{ textAlign: "center"}} className="button active-btn">
                         Contact Me
                       </a>
                     </div>
@@ -51,13 +55,13 @@ class Home extends React.Component {
                 <div className="col-lg-9 col-md-8">
                   <div className="footer-fun-text">
                     {/*<h3 className="footer-logo"><a href="/">Annette</a></h3>*/}
-                    <h5 className="area-title">Follow Me</h5>
+                    <p className="area-title">Follow Me</p>
                     <p className="widget-title">My social profile links</p>
                   </div>
                   <div className="social-bookmark-wrapper">
                     <ul className="social-bookmark">
                       <li>
-                        <a href="https://twitter.com/Annette_Ambriz">
+                        <a href="https://twitter.com/">
                           <i className="ti-twitter" />
                         </a>
                       </li>

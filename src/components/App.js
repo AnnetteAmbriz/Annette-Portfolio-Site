@@ -5,6 +5,11 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import AboutMe from "./AboutMe";
 import LoginForm from "./LoginForm";
+import MyText from "./MyText";
+//import Calendar from "./Calendar";
+import Confirmed from "./Confirmed";
+import Portfolio from "./Portfolio";
+import Thankyou from "./Thankyou";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,10 +33,15 @@ class App extends React.Component {
         <div className="splashpage" />
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" render={ (props) => <Home {...props}/>} />
+            <Route exact path="/" render={ (props) => <Home onLogin={this.onLogin} {...props}/>} />
             <Route path="/contactform" render={ (props) => <ContactForm {...props}/>} />
             <Route path="/aboutme" render={ (props) => <AboutMe {...props}/>} />
             <Route path="/login" render={ (props) => <LoginForm onLogin={this.onLogin} {...props}/>} />
+            <Route path="/mytext" render={ (props) => <MyText onLogin={this.onLogin} {...props}/>} />
+            {/*<Route path="/calendar" render={ (props) => <Calendar onLogin={this.onLogin} {...props}/>} />*/}
+            <Route path="/confirm" render={ (props) => <Confirmed onLogin={this.onLogin} {...props}/>} />
+            <Route path="/portfolio" render={ (props) => <Portfolio onLogin={this.onLogin} {...props}/>} />
+            <Route path="/thankyou" render={ (props) => <Thankyou name={this.state.name}/>} />
           </Switch>
         </BrowserRouter>
       </div>

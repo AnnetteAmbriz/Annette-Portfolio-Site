@@ -34,15 +34,12 @@ class Message(db.Model):
     __tablename__ = "messages"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    userId = db.Column(db.Integer, db.ForeignKey('users.userId'), nullable=False)
+    userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     subject = db.Column(db.String(140), nullable=False)
     message = db.Column(db.String(400), nullable=False)
     messageDatetime = db.Column(db.DateTime, nullable=False)
 
     #Define relationship to user
-    user = db.relationship("User",
-                       backref=db.backref("messages"))
-
     def __repr__(self):
         """Returns relevant info about Message object"""
         return "<MessageDatetime: {} Subject:{}> Message: {}".format(self.messageDatetime, self.subject, self.message)
@@ -57,6 +54,7 @@ def connect_to_db(app):
     # Configure to use our PstgreSQL database
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///project'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_ECHO'] = True
     db.app = app
     db.init_app(app)
 

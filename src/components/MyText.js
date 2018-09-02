@@ -21,6 +21,7 @@ class MyText extends React.Component {
             <body> 
                 <div>
                 { /* Placeholder! */ }
+                
                 </div>
                     
                     <footer className="footer-area text-left">

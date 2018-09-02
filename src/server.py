@@ -12,11 +12,6 @@ app = Flask(__name__)
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "shhh"
 
-# Normally, if you use an undefined variable in Jinja2, it fails
-# silently. This is horrible. Fix this so that, instead, it raises an
-# error.
-app.jinja_env.undefined = StrictUndefined
-
 # @app.route('/')
 # def index():
 #     """Homepage."""
@@ -50,14 +45,14 @@ def user_list():
 def logins():
    
   
-    # email = request.form.get("email")
-    # password = request.form.get("password")
+    email = request.form.get("email")
+    password = request.form.get("password")
 
-    # user = User.query.filter_by(userEmail=email).one()
-    # hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
+    user = User.query.filter_by(email=email).one()
+    hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
-    # if not user or user.digest != hash:
-    #     return render_json([success: False, message: "User/Password does not exist"])
+    if not user or user.digest != hash:
+        return render_json([success: False, message: "User/Password does not exist"])
 
     return jsonify({"success": True, "message": "Login Successful!"})
 

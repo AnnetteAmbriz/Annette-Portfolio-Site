@@ -19,7 +19,27 @@ class LoginForm extends React.Component {
     this.setState({
       [name]: value
     });
+    // localStorage.setItem(
+
+    // );
   }
+  // componentDidMount() {
+  //   const { params } = event.target.name;
+  //   // first reinstate our localStorage
+  //   const localStorageRef = localStorage.getItem(params.name);
+  //   if (localStorageRef) {
+  //     this.setState({ name: JSON.parse(localStorageRef) });
+  //   }
+
+  // }
+
+  // componentDidUpdate() {
+  //   localStorage.setItem(
+  //     this.props.match.params.storeId,
+  //     JSON.stringify(this.state.event.target.name)
+  //   );
+  // }
+
 
   handleSubmit(event) {
     // Stop the form from submiting
@@ -44,23 +64,14 @@ class LoginForm extends React.Component {
       .then(data => {
         
             this.props.onLogin(params.data.name)
+            this.props.history.push(`/thankyou`);
         
       }).catch( (err)=> {
-        this.props.onLogin(params.data.name)
+            this.props.onLogin(params.data.name)
+            this.props.history.push(`/thankyou`);
       });
     }
 
-  // .then((response)=> response.json())
-  // .then((data) => alert("The weather will be " +
-  //                     data.forecast)
-
-  //     this.api.postJson(params)
-
-  //     // get the message from the form
-  //     alert(this.state.email);
-  //     alert(this.state.password);
-
-  // }
 
   render() {
     return (
@@ -78,17 +89,21 @@ class LoginForm extends React.Component {
         <link rel="stylesheet" href="css/custom.css" />
         <script src="js/vendor/modernizr-2.8.3.min.js" />
         <div className="content">
+       
+        <div className="row"/>
+   
+            
           <div className="breadcrumb-style-two gray-bg">
             <div className="container">
               <div className="row">
                 <div className="col-xs-12">
                   <div className="breadcrumb-content">
-                    <h2 className="page-cat">Login or Sign Up</h2>
+                    {/* <h2 className="page-cat">Login or Sign Up</h2> */}
                     <ul className="breadcrumb-list">
-                      <li>
+                      {/* <li>
                         <a href="/">Home</a>
                       </li>
-                      <li>Log In</li>
+                      <li>Log In</li> */}
                     </ul>
                   </div>
                 </div>
@@ -96,22 +111,35 @@ class LoginForm extends React.Component {
             </div>
           </div>
         </div>
+        
 
         <body>
           <div className="area-heading area-heading-style-two text-center">
-            <h2 className="area-title" style={{ textAlign: "center" }}>
-              Sign Up to Stay Connected
-            </h2>
+          <div className="erika-standard-row white-bg">
+                        <div className="container">
+                                <div className="row">
+                                    <div className="col-xs-12">
+                                        <div style={{ textAlign: "center"}} className="area-heading area-heading-style-two text-center">
+                                            <h2 className="area-title"> Sign Up to Stay Connected</h2>
+                                            <p style={{ textAlign: "center"}} >Login In to Schedule a Meet Up and Receive Updates</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                       
+            </div>
+            
             <div className="col-md-6">
               <div className="form-head fix">
                 <div className="marg-area">
                   <form
                     className="email"
-                    style={{ textAlign: "center" }}
+                    style={{ textAlign: "center"}}
+                    
                     onSubmit={this.handleSubmit}
                   >
                     <label>
-                      <input
+                      <input 
                         type="name"
                         style={{ textAlign: "center" }}
                         name="name"
@@ -150,7 +178,15 @@ class LoginForm extends React.Component {
                         style={{ textAlign: "center" }}
                         className="btn-submit button"
                       >
-                        Login In
+                        Log In
+                      </button> <span />
+                      <button
+                       onClick={this.handleSubmit}
+                        type="submit"
+                        style={{ textAlign: "center" }}
+                        className="btn-submit button"
+                      >
+                       Register
                       </button>
                     </label>
                   </form>
@@ -160,64 +196,43 @@ class LoginForm extends React.Component {
           </div>
         </body>
         <footer className="footer-area text-left">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-9 col-md-8">
-                <div className="footer-fun-text">
-                  <h3 className="footer-logo">
-                    <a href="/">Annette</a>
-                  </h3>
-                  <p>My social profile links.</p>
-                </div>
-                <div className="social-bookmark-wrapper">
-                  <ul className="social-bookmark">
-                    <li>
-                      <a href="https://twitter.com/?lang=en">
-                        <i className="ti-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="ti-instagram" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="ti-google" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="footer-menu">
-                  <ul className="footer-menu">
-                    <li>
-                      <a href="/">Home</a>
-                    </li>
-                    <li>
-                      <a href="/portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                      <a href="/aboutme">About Me</a>
-                    </li>
-                    <li>
-                      <a href="/contactform">Contact Me</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="copy-right-info">
-                  <p>All copyright &copy; reserved by annetteambriz 2018</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 hidden-sm hidden-xs">
-                <aside className="instagram-widget">
-                  <h4 className="widget-title">follow me on instagram</h4>
-                  <ul id="instagram-widget" />
-                </aside>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <script src="js/vendor/jquery-1.12.4.min.js" />
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-9 col-md-8">
+                                    <div className="footer-fun-text">
+                                    <p className="area-title">Follow Me</p>
+                                        <p>My social profile links.</p>
+                                    </div>
+                                    <div className="social-bookmark-wrapper">
+                                        <ul className="social-bookmark">
+                                            <li><a href="https://twitter.com/?lang=en"><i className="ti-twitter"></i></a></li>
+                                            <li><a href="#"><i className="ti-instagram"></i></a></li>
+                                            <li><a href="#"><i className="ti-google"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div className="footer-menu">
+                                        <ul className="footer-menu">
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="/portfolio">Portfolio</a></li>
+                                            <li><a href="/aboutme">About Me</a></li>
+                                            <li><a href="/contactform">Contact Me</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div className="copy-right-info">
+                                        <p>All copyright &copy; reserved by annetteambriz 2018</p>
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-4 hidden-sm hidden-xs">
+                                    <aside className="instagram-widget">
+                                        <h4 className="widget-title">follow me on instagram</h4>
+                                        <ul id="instagram-widget"></ul>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <script src="js/vendor/jquery-1.12.4.min.js"></script>
       </Fragment>
     );
   }
