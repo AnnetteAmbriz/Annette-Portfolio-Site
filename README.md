@@ -53,13 +53,9 @@ I plan to deploy this site to the web using either Firebase or Netlify
 * [PostgreSQL](https://www.postgresql.org/rn) - Open source object-relational database system
 * [Python](https://www.python.org/) - Used to make a backend server api
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
-I will use [SemVer](http://semver.org/) for versioning.
+I will use [SemVer](http://semver.org/) for versioning
 
 ## Author
 
