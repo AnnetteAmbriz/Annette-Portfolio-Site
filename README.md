@@ -5,7 +5,7 @@ The end result; is a full-stack personal website that uses isolated React compon
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See the short video titled Website Demo.mov for a quick demo without needing to install.
 
 ### Prerequisites
 
