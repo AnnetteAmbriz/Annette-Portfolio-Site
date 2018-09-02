@@ -70,7 +70,7 @@ I will use [SemVer](http://semver.org/) for versioning
 * **Annette Ambriz** - *Initial work*
 
 
-Hi! My name is Annette, as apparent here on the title of my header component.
+Hi! My name is Annette.
 
 I set out to create a dynamic Single Page Web Application to use as full-stack personal website - using React.js
 
