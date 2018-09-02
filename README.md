@@ -12,11 +12,19 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Flask==0.12
-Flask-DebugToolbar==0.10.1
-Flask-SQLAlchemy==2.2
-psycopg2==2.7.1
-SQLAlchemy==1.1.7
+"autoprefixer-stylus": "0.14.0",
+"firebase": "^4.10.1",
+"moment": "^2.22.2",
+"prop-types": "^15.6.0",
+"re-base": "3.2.2",
+"react": "^16.3.0-alpha.1",
+"react-big-calendar": "^0.19.1",
+"react-dom": "^16.3.0-alpha.1",
+"react-moment": "^0.7.6",
+"react-router-dom": "^4.2.2",
+"react-transition-group": "^2.2.1",
+"serve": "^6.5.0",
+"stylus": "0.54.5"
 
 ```
 
