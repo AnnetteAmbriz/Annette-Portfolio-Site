@@ -69,7 +69,38 @@ I will use [SemVer](http://semver.org/) for versioning
 
 * **Annette Ambriz** - *Initial work*
 
-Still a work in progress
+
+Hi! My name is Annette, as apparent here on the title of my header component.
+
+I set out to create a dynamic Single Page Web Application to use as full-stack personal website - using React.js
+
+I’ve learned to set up Webpack, Babel- to compile my project. I’ve learned the nuances of ES6 and the best practice for using Javascript in the modern browser.
+
+It’s not in the recording but if you were to open the developer tools and view the Network tab you could see that there’s has only been one initial request that returned a webpack bundle that has the ability to display all the pages you see in this presentation.
+
+Most importantly, I learned how to store and move data using React’s component based architecture.
+
+The login component you will see in moment, takes the credentials
+Makes a single request to my server using the Fetch API,
+check the users email, and hashed password against my postgres database.
+
+This will return a response (success/failure. If success), I will convert the response to a json object, grab the usersName value from the json object.
+
+I then call a bound function in my login component passing in the Name value from the response.
+
+This bound function will then set the Name value on the State of my App component.
+Finally, then it is then available via Props to the rest of the child components.
+
+As you can see, where I render the name of the user in the Header component.
+This is lightning fast because...
+
+React reacts to any changes in a components’ state and recreates it’s virtual DOM (which is something unique to React) and does a diff of the new Virtual dom against the rendered DOM.
+Any meaningful differences between the virtual dom and the rendered dom, will be rerendered in the least amount of steps possible using a super cool diffing mechanism also unique to React!
+
+That’s what makes React so fast! It only rerenders changes not the entire page or site!!
+
+I plans to work to deploy my site using Firebase and build open source npm modules to help other software developers integrate APIs with React.
+
 
 ## License
 
